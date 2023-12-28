@@ -1,0 +1,32 @@
+{
+  "id": "fd9aa681-1350-4fbc-82d9-a37afeeca6b3",
+  "name": "Replace",
+  "publisher": "javi.salamanca",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "replace.png",
+  "dependencies": [],
+  "screenshots": [],
+  "application": "22.4.59114.59535",
+  "platform": "22.0.59520.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50110
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "9.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
