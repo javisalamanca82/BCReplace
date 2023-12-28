@@ -1,0 +1,43 @@
+Background: 
+It is needed a tool that will replace a field with the value that the customer wants for all selected records.
+
+Requirements:
+- Create a new generic page that accepts any kind of table
+- Customer must select the field that wants to modify
+- Customer must write as text the new value.
+- System should evaluate the new value with the type of selected field (f.e. do not allow text in an Integer field)
+- Via code, the developer can force the fields to be seen in the new page
+- Do not allow to change PK fields
+- Do not show flowfields or flowfilters
+
+UAC:
+- Customer can select the field that wants to modify (expect flowfields and flowfilters)
+- Customer can write as text the new value (evaluate the value with the type of field)
+- Is it possible to force the fields to be seen in the new page
+- PK fields cannot be changed
+
+Usage Instructions:
+- Add a dependency in the app to be modified with BCTools app
+- Add a page extension that will call page "Replace Dialog"
+
+    action(Replace)
+        {
+            Caption = 'Replace';
+
+            trigger OnAction();
+            var
+                ReplacePage: Page "Replace Dialog";
+            begin
+                ReplacePage.SetNewRecord(Rec, '<Filtered of field nos. to be shown or empty>');
+                ReplacePage.RunModal();
+            end;
+        }
+
+- Select field to be replaced
+- Write new value as text. Important: decimal values should be written with the localization of the client
+- Click OK to proceed
+- Click OK to the confirmation message shown. Here will be written the no. of records that will be changed.
+
+Versions:
+1.0.0.0
+- Initial version
